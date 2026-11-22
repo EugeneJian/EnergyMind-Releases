@@ -2,13 +2,21 @@
 
 **把整件事交给 Harness。** 收到客户投诉，在邮件里点「交给 Harness」。它可以从附件里找证据，调用 8D 质量技能，生成可编辑的 Word 报告，再帮你同步到飞书群、起草客户回信。前一步的结果直接用于下一步，整件事留在同一个会话里。
 
-[下载 macOS 版](https://github.com/EugeneJian/EnergyMind-Releases/releases/latest) · [应用大厅](docs/application-hall.md) · [能力](#能力) · [使用指南](docs/user-guide.md) · [发行许可](https://github.com/EugeneJian/EnergyMind-Releases/blob/main/LICENSE)
+[下载 macOS 版](https://github.com/EugeneJian/EnergyMind-Releases/releases/latest) · [应用大厅](docs/application-hall.md) · [500 万行实测](#500-万行-csv-直接交给-harness) · [能力](#能力) · [使用指南](docs/user-guide.md) · [发行许可](https://github.com/EugeneJian/EnergyMind-Releases/blob/main/LICENSE)
 
 5.2.16 Alpha · Apple 芯片 · macOS 14 及以上
 
 ![一封客户投诉交给 Harness，它调度 8D Quality Skill、办公工具、飞书和邮件，生成报告、同步质量群并起草回信](docs/media/harness-8d-workflow.png)
 
 试用这个场景时，先启用自己的 8D Skill，连接邮箱和飞书。报告里可以标出已确认的事实和仍待验证的根因。你审阅后确认发到哪个群，给客户的回信在原邮件中核对、发送。 [按此场景试一次](docs/user-guide.md#从客户投诉到报告和回信)
+
+## 500 万行 CSV 直接交给 Harness
+
+把原始 CSV 拖进对话，无需先用 Excel 打开。比如问「画出 8 点到 9 点的功率波形，再按天汇总发电量并出图」。Harness 可以调用示波器做测量，再用可视化把结果画成图。
+
+![500 万行 CSV 从 Harness 调用示波器和可视化。使用同一份 CSV 的桌面应用导入实测，示波器约 6.5–6.8 秒，可视化约 4.6–4.9 秒。](docs/media/harness-500m-rows.png)
+
+[查看测试条件与 Excel 后台导入说明](docs/user-guide.md#大文件导入与性能)
 
 ## 能力
 
