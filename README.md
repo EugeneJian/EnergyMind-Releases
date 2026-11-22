@@ -1,27 +1,23 @@
 # EnergyMind
 
-把设备录波交给 **Harness**，它选择 Skill，调用示波器做测量、用办公工具写复核单。事件明细、计算过程和可编辑文件都能在同一会话里打开。
+**把整件事交给 Harness。** 收到客户投诉，在邮件里点「交给 Harness」。它可以从附件里找证据，调用 8D 质量技能，生成可编辑的 Word 报告，再帮你同步到飞书群、起草客户回信。前一步的结果直接用于下一步，整件事留在同一个会话里。
 
-**5.2.16 · Alpha · macOS 14 及以上 · Apple 芯片**
+[下载 macOS 版](https://github.com/EugeneJian/EnergyMind-Releases/releases/latest) · [使用指南](docs/user-guide.md) · [发行许可](https://github.com/EugeneJian/EnergyMind-Releases/blob/main/LICENSE)
 
-[下载 macOS 安装包](https://github.com/EugeneJian/EnergyMind-Releases/releases/latest) · [使用指南](docs/user-guide.md) · [发行许可](LICENSE)
+5.2.16 Alpha · Apple 芯片 · macOS 14 及以上
 
-## 光伏跌落期间，站点从电网取了多少电？
+![一封客户投诉交给 Harness，它调度 8D Quality Skill、办公工具、飞书和邮件，生成报告、同步质量群并起草回信](docs/media/harness-8d-workflow.png)
 
-![Harness 按两个条件查找事件，对原始录波积分，并生成 Word 复核单](docs/media/harness-event-review.png)
+试用这个场景时，先启用自己的 8D Skill，连接邮箱和飞书。报告里可以标出已确认的事实和仍待验证的根因。你审阅后确认发到哪个群，给客户的回信在原邮件中核对、发送。 [按此场景试一次](docs/user-guide.md#从客户投诉到报告和回信)
 
-示例中，光伏功率低于 45 kW 且电网取电的状态持续了 **4 分 10 秒**。Harness 调用示波器对这段录波积分，得到电网取电 **0.446 kWh**、电池放电 **0.545 kWh**。点开事件 CSV 可以逐项核对，Word 复核单可继续编辑。
+## 把团队的做法留成 Skill
 
-![示波器双游标对照光伏跌落前后的光伏、电网、电池功率和电池荷电状态](docs/media/scope-cursors.png)
+在 Harness 里说「把刚才的流程保存为技能」，就能把报告模板和处理步骤留给下一次投诉。你可以在「技能」里新建、编辑和管理自己的 Skill，团队发布的云端技能会自动同步。签名 macOS 版的「我的技能」支持通过 iCloud 在自己的多台 Mac 间同步，也可预览旧版、恢复后继续编辑。 [技能管理与版本恢复](docs/user-guide.md#管理和同步技能)
 
-工程师可以回到同一份录波，把两个游标分别放在跌落前后，直接查看电网功率何时转为取电、电池何时开始放电。
+## 同一个 Harness 也能完成工程任务
 
-## 一封带扫描件的验收邮件，需要谁在什么时候做什么？
+![从逆变器 Excel 或 CSV 开始，Harness 调度示波器计算电量、可视化出图、办公工具生成 Word 周报，并衔接飞书群和邮件回复](docs/media/harness-engineering-workflow.png)
 
-![Harness 读取邮件及扫描附件，列出待办、负责人、期限和对应页码，生成回复草稿](docs/media/mail-scan-handoff.png)
+工程师可以从会话中的事件明细回到原始录波，用双游标复核功率变化，再打开 Word 文件继续编辑。 [查看示波器复核示例](docs/media/scope-cursors.png)
 
-在邮箱点「交给 Harness」。它读取正文和附件，把扫描 PDF 按页交给视觉模型，再把验收事项列成带出处的清单。回复草稿可回到邮箱核对、发送。
-
-*截图来自真实应用界面，使用模拟数据和演示会话。*
-
-本地录波分析支持离线使用。使用 Harness 需要自己的模型账号，提问、选用的附件及工具读取的内容可能发送给该模型服务商。发布包使用 Qt、PySide6 和 Shiboken6 的 LGPL 动态库。 [数据与安全](docs/user-guide.md#数据与安全) · [第三方许可及对应源码](THIRD-PARTY.md)
+本地录波分析可离线使用。使用在线模型时，提问、选用的附件和任务需要的工具结果可能发送给该模型服务商。 [数据与安全](docs/user-guide.md#数据与安全) · [第三方组件与对应源码](https://github.com/EugeneJian/EnergyMind-Releases/blob/main/THIRD-PARTY.md)
