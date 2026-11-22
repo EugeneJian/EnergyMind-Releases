@@ -4,7 +4,7 @@
 
 [下载 macOS 版](https://github.com/EugeneJian/EnergyMind-Releases/releases/latest) · [应用大厅](docs/application-hall.md) · [500 万行实测](#500-万行-csv-直接交给-harness) · [能力](#能力) · [使用指南](docs/user-guide.md) · [发行许可](https://github.com/EugeneJian/EnergyMind-Releases/blob/main/LICENSE)
 
-5.2.16 Alpha · Apple 芯片 · macOS 14 及以上
+5.2.17 Alpha · Apple 芯片 · macOS 14 及以上
 
 ![一封客户投诉交给 Harness，它调度 8D Quality Skill、办公工具、飞书和邮件，生成报告、同步质量群并起草回信](docs/media/harness-8d-workflow.png)
 
@@ -24,10 +24,10 @@
 | --- | --- |
 | **内置办公套件** | 把 PDF、Word、Excel 或 PowerPoint 直接交给 Harness 读取和分析。扫描 PDF 可按页交给支持图片输入的模型。结果可整理成可编辑的 Word、Excel 和 PowerPoint 文件。 |
 | **飞书 · Lark** | 检查 Node.js、官方 `lark-cli` 的安装、配置及登录状态，可从应用启动官方安装和更新。Harness 可使用已安装并启用的飞书技能，按账号授权处理文档、多维表格、云盘、知识库、消息、日历和任务等。 |
-| **邮件** | 通过 IMAP/SMTP 接入邮箱，可把邮件正文和附件一键交给 Harness 整理、起草回复。邮件缓存使用 AES-256-GCM 在本机加密，邮箱授权码存入系统钥匙串。 |
-| **你的 Skill，你做主** | 让 Harness 把常用流程、脚本和模板做成 Skill。在「技能」里管理自己的 Skill，决定如何编辑、何时启用、恢复哪个版本。签名 macOS 版的「我的技能」可通过个人 iCloud 在多台 Mac 间同步。 |
+| **邮件** | 按邮件服务商的 IMAP/SMTP 设置连接邮箱，可把邮件正文和附件一键交给 Harness 整理、起草回复。邮件缓存使用 AES-256-GCM 在本机加密，邮箱凭据存入系统钥匙串。 [连接邮箱](docs/user-guide.md#连接邮箱) |
+| **你的 Skill，你做主** | 让 Harness 把常用流程、脚本和模板做成 Skill。在「技能」里管理自己的 Skill，决定如何编辑、何时启用、恢复哪个版本。在签名 macOS 版中，可让 Harness 按用途整理「我的技能」，分组和技能一同通过个人 iCloud 同步到多台 Mac。 |
 | **专业工具** | 示波器读设备录波，支持双游标测量、积分和事件定位。可视化处理表格，支持分类汇总、筛选、下钻和出图。两者均通过 500 万行 CSV 导入与分析测试，也支持后台导入 Excel。可单独打开，或由 Harness 在同一任务中调用。 [大文件导入与性能](docs/user-guide.md#大文件导入与性能) |
-| **Runtime** | 随版本跟进 Pi，5.2.16 内置 Pi 1.6.0。Harness 已定义会话、事件和工具接口，计划通过适配器接入更多 Runtime。 |
+| **Runtime** | 随版本跟进 Pi，5.2.17 内置 Pi 1.6.0。Harness 已定义会话、事件和工具接口，计划通过适配器接入更多 Runtime。 |
 
 ### 个人数据与权限
 

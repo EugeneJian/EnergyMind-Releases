@@ -1,11 +1,11 @@
 # 第三方组件、许可与对应源码
 
-EnergyMind 5.2.16 使用 Qt、PySide6 Essentials 和 Shiboken6 6.12.0 动态库，适用 LGPL v3。Pi 独立进程内嵌 Bun 1.4.4，其中 JavaScriptCore/WebKit 和 TinyCC 的相应文件适用 LGPL。第三方组件的使用、修改、替换和分发依各自原许可证办理。 [本版本下载](https://github.com/EugeneJian/EnergyMind-Releases/releases/tag/v5.2.16)
+EnergyMind 5.2.17 使用 Qt、PySide6 Essentials 和 Shiboken6 6.12.0 动态库，适用 LGPL v3。Pi 独立进程内嵌 Bun 1.4.4，其中 JavaScriptCore/WebKit 和 TinyCC 的相应文件适用 LGPL。第三方组件的使用、修改、替换和分发依各自原许可证办理。 [本版本下载](https://github.com/EugeneJian/EnergyMind-Releases/releases/tag/v5.2.17)
 
 ## 从哪里取得材料
 
 - 在 Finder 中右键点击应用，选择「显示包内容」，打开 `Contents/Resources/ThirdParty/`。其中有 GPL/LGPL 原文、Qt 及内嵌组件署名、Python/原生库许可、Rust 依赖表，以及 Pi、Bun、Mermaid 和 ELK 的许可资料。
-- 同一发布页另提供 `EnergyMind-5.2.16-ThirdParty-Sources.zip` 和 `WebKit-JSC-d6375c72-source.tar.gz`，以及校验这两份下载的 `ThirdParty-SHA256SUMS.txt`。把这三个文件放在同一目录后执行 `shasum -a 256 -c ThirdParty-SHA256SUMS.txt`。无需登录或安装 EnergyMind 即可获取。
+- 同一发布页另提供 `EnergyMind-5.2.17-ThirdParty-Sources.zip` 和 `WebKit-JSC-d6375c72-source.tar.gz`，以及校验这两份下载的 `ThirdParty-SHA256SUMS.txt`。把这三个文件放在同一目录后执行 `shasum -a 256 -c ThirdParty-SHA256SUMS.txt`。无需登录或安装 EnergyMind 即可获取。
 - 第一个归档内的 `SOURCE-ARCHIVES.sha256` 可校验各上游原始归档。Qt 源码包括 qtbase、qtsvg、qtimageformats、qttranslations 和 PySide/Shiboken 的 pyside-setup。也包含 Pi、Bun 和 TinyCC 的指定源码，以及随包 certifi 和 python-calamine 的同版源发行包。
 - WebKit 归档取自 Bun 构建锁定的提交，包含 JavaScriptCore、WebCore、WTF、bmalloc、构建脚本及使用的配套源码。上游完整 Git 历史和测试集可从对应提交取得。 [WebKit 源码提交](https://github.com/oven-sh/WebKit/tree/d6375c72affe0f70222cdcb45012b10f0bf3a9d5)
 
