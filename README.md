@@ -2,7 +2,7 @@
 
 **把整件事交给 Harness。** 收到客户投诉，在邮件里点「交给 Harness」。它可以从附件里找证据，调用 8D 质量技能，生成可编辑的 Word 报告，再帮你同步到飞书群、起草客户回信。前一步的结果直接用于下一步，整件事留在同一个会话里。
 
-[下载 macOS 版](https://github.com/EugeneJian/EnergyMind-Releases/releases/latest) · [能力](#能力) · [使用指南](docs/user-guide.md) · [发行许可](https://github.com/EugeneJian/EnergyMind-Releases/blob/main/LICENSE)
+[下载 macOS 版](https://github.com/EugeneJian/EnergyMind-Releases/releases/latest) · [应用大厅](docs/application-hall.md) · [能力](#能力) · [使用指南](docs/user-guide.md) · [发行许可](https://github.com/EugeneJian/EnergyMind-Releases/blob/main/LICENSE)
 
 5.2.16 Alpha · Apple 芯片 · macOS 14 及以上
 
