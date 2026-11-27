@@ -1,6 +1,8 @@
 # SSOT 架构与拓扑审计
 
-共享 skill 的单一真源为 `~/.agents/skills/`；本 skill 的真实目录是其直接子目录 `feishu-nav/`。真源至少包含一个非隐藏 skill 目录，每个这样的目录均须真实且含 `SKILL.md`；真源和工具目录的路径不得通过软链别名。
+本页仅说明上游 Git 仓库的多工具部署；其单一真源为 `~/.agents/skills/`。导入 EnergyMind「我的技能」不创建其他工具的软链，跨 Mac 同步用 EnergyMind 技能管理工具查看。
+
+真源至少包含一个非隐藏 skill 目录，每个这样的目录均须真实且含 `SKILL.md`；真源和工具目录的路径不得通过软链别名。
 
 ## 规则
 
@@ -13,7 +15,12 @@
 
 ```bash
 # 只读拓扑审计：安装器更新、新增 skill 或修改链接后运行
-python3 ~/.agents/skills/feishu-nav/scripts/skill-ssot-audit.py
+python3 <SKILL_DIR>/scripts/skill-ssot-audit.py
+
+# 本机形态不同时，指定要检查的 home（脚本按 <home>/.agents/skills 等固定路径推导）
+python3 <SKILL_DIR>/scripts/skill-ssot-audit.py --home ~
 ```
 
-审计只检测、不修复，也不验证 CLI 安装、认证、飞书权限或各工具实际加载。遇到真实副本/错误链接时停止，先比对并备份，再由本人决定如何处理；不要自动删除、移动或覆盖。新机安装与安全链接步骤见仓库 [README](../../README.md)。
+该脚本不适用于验证 EnergyMind「我的技能」的安装或 iCloud 同步。不要为通过上游审计而删除或改动本机已有链接。
+
+审计只检测、不修复，也不验证 CLI 安装、认证、飞书权限或各工具实际加载。遇到真实副本/错误链接时停止，先比对并备份，再由本人决定如何处理；不要自动删除、移动或覆盖。新机安装与安全链接步骤见上游仓库 README。
