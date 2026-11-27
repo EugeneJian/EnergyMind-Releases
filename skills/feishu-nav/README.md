@@ -4,9 +4,14 @@
 
 ## 📦 GitHub 地址
 
-- 仓库：https://github.com/EugeneJian/EnergyMind-Releases
-- 本 skill 目录：https://github.com/EugeneJian/EnergyMind-Releases/tree/main/feishu-nav
-- 安装部署（新机同步、SSOT 软链架构）：见[仓库 README](../README.md)
+- 仓库：https://github.com/EugeneJian/grt-agent-skills
+- 本 skill 目录：https://github.com/EugeneJian/grt-agent-skills/tree/main/feishu-nav
+- 安装部署（新机同步、SSOT 软链架构）：见[仓库 README](https://github.com/EugeneJian/grt-agent-skills/blob/main/README.md)
+
+## 💾 本机安装位置
+
+- 本版本作为 EnergyMind 团队技能发布，从 GitHub 发布目录单向同步，在本机只读；不会创建其他代理工具的软链。
+- 导入日期 2026-11-26，取自仓库提交 `49dc345`。下文 `<SKILL_DIR>` 指 skill 所在目录。
 
 ## 🧭 这是什么
 
@@ -35,7 +40,7 @@ skill 内预置了各核心资源（项目简报、认证多维表格、能源�
 ### 前置条件
 
 - Python 3（拓扑审计脚本需要）
-- `lark-cli` 已安装并完成 `config init`，以用户身份登录（`lark-cli auth login --recommend`，用 `lark-cli auth status` 检查）
+- EnergyMind 的飞书连接已配置，业务访问通过 `feishu-lark`；如需登录或追加权限，请在 EnergyMind 中处理。
 - 飞书文档访问权限跟随账号
 
 ### 常用操作
@@ -43,11 +48,11 @@ skill 内预置了各核心资源（项目简报、认证多维表格、能源�
 **1. 查看导航表全部条目**
 
 ```bash
-mkdir -p ~/.agents/skills/.exports
+# 从工作区运行，先创建当前会话的 exports/<YYYY-MM-DD>/ 目录。
 lark-cli base +record-list --base-token NNpAbmIera0mI2sVig2csRSbnNb \
   --table-id tblgHF305e99kLQz --view-id vewrC7NlnR \
   --field-id fldaGujNal --field-id fldIULwk2G --field-id flddwrn60E --field-id fldatCEF78 --field-id fld21cWyt6 \
-  --format ndjson --output ~/.agents/skills/.exports/nav-records.ndjson --overwrite --as user
+  --format ndjson --output 'sessions/<会话>/exports/<YYYY-MM-DD>/nav-records.ndjson' --as user
 ```
 
 **2. 新增 / 更新导航条目**
@@ -64,19 +69,19 @@ lark-cli base +record-list --base-token NNpAbmIera0mI2sVig2csRSbnNb \
 
 **4. SSOT 拓扑审计**
 
-安装器更新、新增 skill 或修改链接后运行（只读检测，不修复）：
+只适用于上游多工具部署（只读检测，不修复），不用于验证 EnergyMind 的导入或 iCloud 同步：
 
 ```bash
-python3 ~/.agents/skills/feishu-nav/scripts/skill-ssot-audit.py
+python3 <SKILL_DIR>/scripts/skill-ssot-audit.py
 ```
 
-新机安装与软链建立用 `scripts/setup-tool-links.py`，步骤见[仓库 README](../README.md)。
+新机安装与软链建立用 `scripts/setup-tool-links.py`，步骤见[仓库 README](https://github.com/EugeneJian/grt-agent-skills/blob/main/README.md)。详见 [references/ssot-audit.md](references/ssot-audit.md)。
 
 ### 注意事项
 
 - 坐标不等于访问凭据，不能绕过账号权限；访问失败或资源迁移时需重新核对原链接
 - SKILL.md 中的历史业务快照不会自动更新，用于新汇报前必须重读原始表格核对并注明核验日期
-- 导出文件统一写入 `~/.agents/skills/.exports/`（被 Git 忽略，也不参与审计）
+- 导出文件统一写入当前会话的 `exports/<YYYY-MM-DD>/`（EnergyMind）；其他 agent 环境可用 `~/.agents/skills/.exports/`
 
 ## 📄 目录结构
 
@@ -84,11 +89,17 @@ python3 ~/.agents/skills/feishu-nav/scripts/skill-ssot-audit.py
 feishu-nav/
 ├── README.md            ← 本说明文档
 ├── SKILL.md             ← Agent Skill 主文件（坐标、口径、协议）
+├── references/
+│   ├── overview-protocol.md   # 多记录表全貌协议
+│   └── ssot-audit.md          # 拓扑规则与审计说明
 ├── scripts/
 │   ├── skill-ssot-audit.py    # 只读拓扑审计
+│   ├── skill_distribution.py  # 分发清单读取
 │   └── setup-tool-links.py    # 新机工具软链建立
-└── tests/
-    └── test_skill_ssot_audit.py
+├── tests/
+│   └── test_skill_ssot_audit.py
+└── agents/
+    └── openai.yaml            # Codex interface 元数据
 ```
 
 License：MIT
